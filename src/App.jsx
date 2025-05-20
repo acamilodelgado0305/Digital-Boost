@@ -8,7 +8,6 @@ const RadioLinkCalcManual = () => {
       {/* Encabezado con Logo y Título */}
       <header className="flex items-center justify-between mb-12 border-b pb-6">
         <div className="flex items-center space-x-4">
-
           <h1 className="text-4xl font-bold text-indigo-800">Manual de Usuario: RadioLinkCalc</h1>
         </div>
         <div className="text-sm text-gray-500">
@@ -43,7 +42,7 @@ const RadioLinkCalcManual = () => {
         <h2 className="text-2xl font-semibold text-indigo-700 mb-4">2. Navegación por la Interfaz</h2>
         <div className="bg-white p-6 rounded-lg shadow-md">
           <img
-            src={inicio} // Usa la captura de pantalla que proporcionaste
+            src={inicio}
             alt="Interfaz de RadioLinkCalc"
             className="w-full max-h-96 object-contain border border-gray-300 rounded-lg mb-4"
           />
@@ -80,9 +79,6 @@ const RadioLinkCalcManual = () => {
               <li>Latitud Receptor: Ejemplo <code className="bg-gray-200 px-1 rounded">7.380841667</code></li>
               <li>Longitud Receptor: Ejemplo <code className="bg-gray-200 px-1 rounded">-72.65215833</code></li>
             </ul>
-            <div className="mt-4">
-              
-            </div>
           </div>
 
           {/* Parámetros de los Equipos */}
@@ -112,9 +108,6 @@ const RadioLinkCalcManual = () => {
               <li>Ganancia del Receptor: Ejemplo <code className="bg-gray-200 px-1 rounded">12 dBi</code></li>
               <li>Sensibilidad del Receptor: Ejemplo <code className="bg-gray-200 px-1 rounded">-107 dBm</code></li>
             </ul>
-            <div className="mt-4">
-              
-            </div>
           </div>
 
           {/* Parámetros de Simulación */}
@@ -124,8 +117,8 @@ const RadioLinkCalcManual = () => {
               Establece cuántas muestras tomar y qué conjunto de datos usar:
             </p>
             <ul className="list-disc pl-5 text-gray-700">
-              <li>Número de Puntos/Muestras: Ejemplo <code className="bg-gray-200 px-1 rounded">100</code></li>
-              <li>Dataset Perfil: Ejemplo <code className="bg-gray-200 px-1 rounded">mapzen</code></li>
+              <li>Número de Puntos/Muestras: Ejemplo <code className="bg-gray-200 px-1 rounded">100</code>. Máximo permitido: <code className="bg-gray-200 px-1 rounded">1000</code> para garantizar precisión sin sobrecargar el sistema.</li>
+              <li>Dataset Perfil: Ejemplo <code className="bg-gray-200 px-1 rounded">mapzen</code>. Mapzen se utiliza debido a su alta resolución global, datos abiertos y actualizaciones frecuentes, lo que lo hace más confiable que otros conjuntos como SRTM, que pueden tener menor precisión en áreas específicas.</li>
             </ul>
           </div>
 
@@ -135,9 +128,6 @@ const RadioLinkCalcManual = () => {
             <p className="text-gray-700 leading-relaxed">
               Una vez ingresados todos los datos, haz clic en el botón <strong className="text-indigo-600">"Calcular"</strong> para obtener los resultados.
             </p>
-            <div className="mt-4">
-             
-            </div>
           </div>
         </div>
       </section>
@@ -171,6 +161,7 @@ const RadioLinkCalcManual = () => {
             <p className="text-gray-700">
               - El enlace tiene una distancia de <strong>2.75 km</strong> y opera a <strong>5.710 GHz</strong>.<br />
               - La zona de Fresnel en el punto más crítico (índice 73) tiene un radio de <strong>5.29 m</strong>, pero solo hay <strong>4.62 m</strong> de espacio libre, lo que resulta en un <strong>Peor Fresnel de 0.87F1</strong>. Esto está dentro del rango aceptable (mínimo 0.6F1), pero podría haber interferencias en condiciones adversas.<br />
+              - <strong>Nota sobre Fresnel:</strong> Si la altura de ambas antenas es muy baja (por ejemplo, 0 m), el Fresnel será negativo porque las antenas están al nivel del suelo, causando una obstrucción total por el terreno u otros obstáculos que invaden completamente la zona de Fresnel. Por otro lado, si las antenas son muy altas (por ejemplo, 50 m, ya que alturas como 100 m no son comunes en la práctica), la zona de Fresnel estará suficientemente elevada como para evitar la mayoría de los obstáculos terrestres, resultando en un enlace con mínima o ninguna obstrucción significativa.<br />
               - Las pérdidas totales son de <strong>123.05 dB</strong>, lo que genera un margen de enlace negativo (-85.05 dB), indicando que el enlace <strong>no es viable</strong> con los parámetros actuales.
             </p>
           </div>
@@ -185,10 +176,10 @@ const RadioLinkCalcManual = () => {
         </div>
 
         <img
-            src={resultados} // Usa una captura de ejemplo de resultados
-            alt="Ejemplo de Resultados"
-            className="w-full max-w-lg mx-auto"
-          />
+          src={resultados}
+          alt="Ejemplo de Resultados"
+          className="w-full max-w-lg mx-auto"
+        />
       </section>
 
       {/* Perfil de Elevación */}
@@ -199,7 +190,7 @@ const RadioLinkCalcManual = () => {
             El gráfico muestra el perfil topográfico entre el transmisor y el receptor, incluyendo alturas y obstáculos.
           </p>
           <img
-            src="/images/perfil-elevacion.png" // Usa un gráfico de ejemplo de perfil de elevación
+            src="/images/perfil-elevacion.png"
             alt="Perfil de Elevación"
             className="w-full max-w-lg mx-auto"
           />
@@ -248,9 +239,14 @@ const RadioLinkCalcManual = () => {
         </div>
       </section>
 
-      {/* Footer con Botón Volver */}
-      <footer className="flex justify-center mt-12">
-
+      {/* Footer con Información de Creadores y Repositorio */}
+      <footer className="mt-12 text-center text-gray-600 text-sm">
+        <p>
+          Desarrollado por Andrés Camilo Delgado y Cristian Castro Ríos, estudiantes de Ingeniería de Telecomunicaciones, Universidad de Pamplona, bajo la dirección del docente José del Carmen Peña, como parte del curso de Radiocomunicaciones.
+        </p>
+        <p className="mt-2">
+          Código fuente disponible en: <a href="https://github.com/Criscas05/RadioLinkCalc.git" className="text-blue-600 hover:underline">https://github.com/Criscas05/RadioLinkCalc.git</a>
+        </p>
       </footer>
     </div>
   );
