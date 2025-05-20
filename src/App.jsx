@@ -81,11 +81,7 @@ const RadioLinkCalcManual = () => {
               <li>Longitud Receptor: Ejemplo <code className="bg-gray-200 px-1 rounded">-72.65215833</code></li>
             </ul>
             <div className="mt-4">
-              <img
-                src="/images/coordenadas-diagrama.png" // Usa un diagrama de un mapa con puntos de ubicación
-                alt="Diagrama de Coordenadas"
-                className="w-full max-w-md mx-auto"
-              />
+             
             </div>
           </div>
 
@@ -117,11 +113,7 @@ const RadioLinkCalcManual = () => {
               <li>Sensibilidad del Receptor: Ejemplo <code className="bg-gray-200 px-1 rounded">-107 dBm</code></li>
             </ul>
             <div className="mt-4">
-              <img
-                src="/images/transmisor-diagrama.png" // Usa un diagrama de un enlace de radio
-                alt="Diagrama del Transmisor"
-                className="w-full max-w-md mx-auto"
-              />
+             
             </div>
           </div>
 
@@ -144,11 +136,7 @@ const RadioLinkCalcManual = () => {
               Una vez ingresados todos los datos, haz clic en el botón <strong className="text-indigo-600">"Calcular"</strong> para obtener los resultados.
             </p>
             <div className="mt-4">
-              <img
-                src="/images/boton-calcular.png" // Usa una captura del botón resaltado
-                alt="Botón Calcular"
-                className="w-full max-w-xs mx-auto"
-              />
+              
             </div>
           </div>
         </div>
@@ -248,7 +236,7 @@ const RadioLinkCalcManual = () => {
           </p>
           <ul className="list-disc pl-5 text-gray-700">
             <li>Email: <a href="mailto:support@radiolinkcalc.com" className="text-blue-600 hover:underline">support@radiolinkcalc.com</a></li>
-            <li>Teléfono: +1 (123) 456-7890</li>
+            <li>Teléfono: +57 311 8657681</li>
             <li>Horario de Atención: Lunes a Viernes, 9:00 AM - 5:00 PM (EST)</li>
           </ul>
         </div>
