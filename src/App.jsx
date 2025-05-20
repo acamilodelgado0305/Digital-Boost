@@ -1,397 +1,265 @@
-import React, { useState } from 'react';
-import { Button } from "./components/ui/button.jsx";
-import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card.jsx";
-import { Facebook, Instagram, Linkedin, Mail, MessageSquare, Monitor, MousePointer, Search, Star } from 'lucide-react';
+import React from 'react';
+import inicio from './images/inicio.jpg';
+import resultados from './images/resultados.jpg';
 
-const LandingPage = () => {
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
-
-  const handleClickOutside = (e) => {
-    if (e.target.id === "modal-overlay") {
-      closeModal();
-    }
-  };
-
-
+const RadioLinkCalcManual = () => {
   return (
-    <div className="min-h-screen bg-white">
-      <header className="bg-indigo-700 text-white">
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          {/* Logotipo */}
-          <div className="text-2xl font-bold">
-            <a href="#">Digital Boost</a>
-          </div>
+    <div className="bg-gray-50 text-gray-800 min-h-screen p-6 md:p-12 font-sans">
+      {/* Encabezado con Logo y Título */}
+      <header className="flex items-center justify-between mb-12 border-b pb-6">
+        <div className="flex items-center space-x-4">
 
-          {/* Menú de navegación */}
-          <nav className="hidden md:flex space-x-6">
-            <a href="#servicios" className="hover:underline">Servicios</a>
-            <a href="#testimonios" className="hover:underline">Testimonios</a>
-            <a href="#contacto" className="hover:underline">Contacto</a>
-          </nav>
-
-          {/* Botón de llamada a la acción */}
-          <div>
-            <Button
-              className="bg-white text-indigo-700 hover:bg-gray-100 hidden md:inline-block"
-              onClick={openModal}
-
-            >
-              Contáctanos
-            </Button>
-          </div>
-
-          {/* Menú móvil */}
-          <div className="md:hidden">
-            <button
-              className="text-white focus:outline-none"
-              onClick={() => setOpen(!open)}
-            >
-              <svg
-                className="w-6 h-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
-          </div>
+          <h1 className="text-4xl font-bold text-indigo-800">Manual de Usuario: RadioLinkCalc</h1>
         </div>
-
-        {/* Menú móvil desplegable */}
-        {open && (
-          <div className="bg-indigo-800 md:hidden">
-            <a href="#servicios" className="block px-6 py-3 border-b border-indigo-700 hover:bg-indigo-600">Servicios</a>
-            <a href="#testimonios" className="block px-6 py-3 border-b border-indigo-700 hover:bg-indigo-600">Testimonios</a>
-            <a href="#contacto" className="block px-6 py-3 hover:bg-indigo-600">Contacto</a>
-          </div>
-        )}
+        <div className="text-sm text-gray-500">
+          Versión 1.0 | Fecha: 19 de mayo de 2025
+        </div>
       </header>
 
-      <section className="relative bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-24">
-        <div className="container mx-auto px-6">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl font-bold mb-6">
-              Impulsa tu negocio en el mundo digital
-            </h1>
-            <p className="text-xl mb-8">
-              Ayudamos a pequeñas y medianas empresas a crecer y destacar con estrategias de marketing digital efectivas y personalizadas.
+      {/* Índice */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold text-indigo-700 mb-4">Índice</h2>
+        <ul className="list-none space-y-2">
+          <li><a href="#introduccion" className="text-blue-600 hover:underline">1. Introducción</a></li>
+          <li><a href="#interfaz" className="text-blue-600 hover:underline">2. Navegación por la Interfaz</a></li>
+          <li><a href="#como-usar" className="text-blue-600 hover:underline">3. Cómo Usar la Calculadora</a></li>
+          <li><a href="#resultados" className="text-blue-600 hover:underline">4. Resultados</a></li>
+          <li><a href="#perfil-elevacion" className="text-blue-600 hover:underline">5. Perfil de Elevación</a></li>
+          <li><a href="#errores" className="text-blue-600 hover:underline">6. Errores Comunes y Soluciones</a></li>
+          <li><a href="#soporte" className="text-blue-600 hover:underline">7. Soporte Técnico</a></li>
+        </ul>
+      </section>
+
+      {/* Introducción */}
+      <section id="introduccion" className="mb-12">
+        <h2 className="text-2xl font-semibold text-indigo-700 mb-4">1. Introducción</h2>
+        <p className="text-gray-700 leading-relaxed">
+          RadioLinkCalc es una herramienta avanzada diseñada para ingenieros y técnicos en telecomunicaciones, que permite calcular y evaluar la viabilidad de enlaces de radio. Este manual te guiará paso a paso para aprovechar al máximo sus funciones, desde la configuración inicial hasta la interpretación de resultados.
+        </p>
+      </section>
+
+      {/* Navegación por la Interfaz */}
+      <section id="interfaz" className="mb-12">
+        <h2 className="text-2xl font-semibold text-indigo-700 mb-4">2. Navegación por la Interfaz</h2>
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <img
+            src={inicio} // Usa la captura de pantalla que proporcionaste
+            alt="Interfaz de RadioLinkCalc"
+            className="w-full max-h-96 object-contain border border-gray-300 rounded-lg mb-4"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <ul className="list-disc pl-5 space-y-2 text-gray-700">
+              <li><strong>Coordenadas:</strong> Ingresa las coordenadas geográficas del transmisor y receptor.</li>
+              <li><strong>Parámetros de los Equipos:</strong> Configura la frecuencia y altura de las antenas.</li>
+              <li><strong>Parámetros del Transmisor:</strong> Define potencia, pérdidas y ganancias.</li>
+              <li><strong>Parámetros de Simulación:</strong> Selecciona número de muestras y dataset topográfico.</li>
+            </ul>
+            <ul className="list-disc pl-5 space-y-2 text-gray-700">
+              <li><strong>Botón Calcular:</strong> Inicia el cálculo del enlace.</li>
+              <li><strong>Resultados:</strong> Visualiza métricas como distancia, pérdida de señal y cobertura.</li>
+              <li><strong>Perfil de Elevación:</strong> Muestra el relieve entre transmisor y receptor.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Cómo Usar la Calculadora */}
+      <section id="como-usar" className="mb-12">
+        <h2 className="text-2xl font-semibold text-indigo-700 mb-4">3. Cómo Usar la Calculadora</h2>
+
+        <div className="space-y-6">
+          {/* Coordenadas */}
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-medium text-gray-800 mb-2">3.1 Coordenadas</h3>
+            <p className="text-gray-700 leading-relaxed mb-2">
+              Ingresa las coordenadas geográficas del transmisor y receptor en formato decimal:
             </p>
-            <Button
-              className="bg-white text-blue-600 hover:bg-gray-100"
-              onClick={openModal}
-            >
-              Consulta Gratuita
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {isModalOpen && (
-        <div
-          id="modal-overlay"
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-          onClick={handleClickOutside}
-        >
-          <div className="bg-white rounded-lg shadow-lg w-full max-w-md p-6 relative">
-            <h2 className="text-2xl font-bold mb-4 text-center">Consulta Gratuita</h2>
-            <form className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700">Nombre</label>
-                <input
-                  type="text"
-                  className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Tu nombre"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">Email</label>
-                <input
-                  type="email"
-                  className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Tu correo electrónico"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">Mensaje</label>
-                <textarea
-                  className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Cuéntanos sobre tu negocio"
-                  rows="4"
-                  required
-                ></textarea>
-              </div>
-              <div className="text-center">
-                <Button className="bg-blue-600 text-white hover:bg-blue-700 w-full">
-                  Enviar
-                </Button>
-              </div>
-            </form>
-            <button
-              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
-              onClick={closeModal}
-            >
-              ×
-            </button>
-          </div>
-        </div>
-      )}
-
-
-      <section id="mision-vision" className="bg-gray-100 py-12">
-        <div className="container mx-auto px-6 text-center">
-          {/* Título */}
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">Nuestra Misión y Visión</h2>
-
-          <div className="flex flex-col md:flex-row gap-8">
-            {/* Misión */}
-            <div className="bg-white shadow-lg rounded-lg p-6 md:w-1/2">
-              <h3 className="text-2xl font-semibold text-indigo-700 mb-4">Misión</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Nuestra misión es proporcionar soluciones innovadoras y personalizadas para satisfacer las necesidades de nuestros clientes, promoviendo un impacto positivo en la sociedad y fomentando el desarrollo sostenible.
-              </p>
+            <ul className="list-disc pl-5 text-gray-700">
+              <li>Latitud Transmisor: Ejemplo <code className="bg-gray-200 px-1 rounded">7.357130556</code></li>
+              <li>Longitud Transmisor: Ejemplo <code className="bg-gray-200 px-1 rounded">-72.65921111</code></li>
+              <li>Latitud Receptor: Ejemplo <code className="bg-gray-200 px-1 rounded">7.380841667</code></li>
+              <li>Longitud Receptor: Ejemplo <code className="bg-gray-200 px-1 rounded">-72.65215833</code></li>
+            </ul>
+            <div className="mt-4">
+              <img
+                src="/images/coordenadas-diagrama.png" // Usa un diagrama de un mapa con puntos de ubicación
+                alt="Diagrama de Coordenadas"
+                className="w-full max-w-md mx-auto"
+              />
             </div>
+          </div>
 
-            {/* Visión */}
-            <div className="bg-white shadow-lg rounded-lg p-6 md:w-1/2">
-              <h3 className="text-2xl font-semibold text-indigo-700 mb-4">Visión</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Ser líderes en el sector, reconocidos por nuestra excelencia, compromiso y capacidad para transformar desafíos en oportunidades, construyendo un futuro mejor para todos.
-              </p>
+          {/* Parámetros de los Equipos */}
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-medium text-gray-800 mb-2">3.2 Parámetros de los Equipos</h3>
+            <p className="text-gray-700 leading-relaxed mb-2">
+              Define la frecuencia de operación y la altura de las antenas:
+            </p>
+            <ul className="list-disc pl-5 text-gray-700">
+              <li>Frecuencia Mínima: Ejemplo <code className="bg-gray-200 px-1 rounded">5.700 GHz</code></li>
+              <li>Frecuencia Máxima: Ejemplo <code className="bg-gray-200 px-1 rounded">5.720 GHz</code></li>
+              <li>Altura del Transmisor: Ejemplo <code className="bg-gray-200 px-1 rounded">5 m</code></li>
+              <li>Altura del Receptor: Ejemplo <code className="bg-gray-200 px-1 rounded">5 m</code></li>
+            </ul>
+          </div>
+
+          {/* Parámetros del Transmisor */}
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-medium text-gray-800 mb-2">3.3 Parámetros del Transmisor</h3>
+            <p className="text-gray-700 leading-relaxed mb-2">
+              Especifica las características del equipo de transmisión:
+            </p>
+            <ul className="list-disc pl-5 text-gray-700">
+              <li>Potencia: Ejemplo <code className="bg-gray-200 px-1 rounded">1 W</code></li>
+              <li>Pérdida de Línea: Ejemplo <code className="bg-gray-200 px-1 rounded">0.1 dB</code></li>
+              <li>Ganancia del Transmisor: Ejemplo <code className="bg-gray-200 px-1 rounded">12 dBi</code></li>
+              <li>Ganancia del Receptor: Ejemplo <code className="bg-gray-200 px-1 rounded">12 dBi</code></li>
+              <li>Sensibilidad del Receptor: Ejemplo <code className="bg-gray-200 px-1 rounded">-107 dBm</code></li>
+            </ul>
+            <div className="mt-4">
+              <img
+                src="/images/transmisor-diagrama.png" // Usa un diagrama de un enlace de radio
+                alt="Diagrama del Transmisor"
+                className="w-full max-w-md mx-auto"
+              />
+            </div>
+          </div>
+
+          {/* Parámetros de Simulación */}
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-medium text-gray-800 mb-2">3.4 Parámetros de Simulación</h3>
+            <p className="text-gray-700 leading-relaxed mb-2">
+              Establece cuántas muestras tomar y qué conjunto de datos usar:
+            </p>
+            <ul className="list-disc pl-5 text-gray-700">
+              <li>Número de Puntos/Muestras: Ejemplo <code className="bg-gray-200 px-1 rounded">100</code></li>
+              <li>Dataset Perfil: Ejemplo <code className="bg-gray-200 px-1 rounded">mapzen</code></li>
+            </ul>
+          </div>
+
+          {/* Botón Calcular */}
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-medium text-gray-800 mb-2">3.5 Botón "Calcular"</h3>
+            <p className="text-gray-700 leading-relaxed">
+              Una vez ingresados todos los datos, haz clic en el botón <strong className="text-indigo-600">"Calcular"</strong> para obtener los resultados.
+            </p>
+            <div className="mt-4">
+              <img
+                src="/images/boton-calcular.png" // Usa una captura del botón resaltado
+                alt="Botón Calcular"
+                className="w-full max-w-xs mx-auto"
+              />
             </div>
           </div>
         </div>
       </section>
 
-
-
-
-      {/* Servicios */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Nuestros Servicios
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="bg-white">
-              <CardHeader>
-                <Monitor className="h-12 w-12 text-blue-600 mb-4" />
-                <CardTitle>Diseño Web</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Creamos sitios web atractivos y funcionales que convierten visitantes en clientes.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white">
-              <CardHeader>
-                <MessageSquare className="h-12 w-12 text-blue-600 mb-4" />
-                <CardTitle>Redes Sociales</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Gestión profesional de redes sociales para construir una comunidad engaged.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white">
-              <CardHeader>
-                <MousePointer className="h-12 w-12 text-blue-600 mb-4" />
-                <CardTitle>Publicidad Digital</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Campañas optimizadas para maximizar tu ROI y alcanzar a tu audiencia ideal.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Servicios */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-8">Lo que dicen nuestros clientes</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-gray-100 p-6 rounded-lg shadow">
-              <p className="italic text-gray-600">
-                "Gracias a sus estrategias de marketing, nuestro negocio ha crecido como nunca. Altamente recomendados."
-              </p>
-              <h3 className="text-sm font-semibold mt-4">- Ana López</h3>
-            </div>
-            <div className="bg-gray-100 p-6 rounded-lg shadow">
-              <p className="italic text-gray-600">
-                "Su equipo de diseño creó una página web espectacular para nuestra marca. Excelente trabajo."
-              </p>
-              <h3 className="text-sm font-semibold mt-4">- Carlos Martínez</h3>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="map-section" className="py-12 bg-gray-50">
-        <div className="container mx-auto px-6 text-center">
-          {/* Título */}
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">Encuéntranos</h2>
-          <p className="text-gray-600 mb-8">
-            Estamos aquí para ayudarte. Encuentra nuestra ubicación fácilmente.
+      {/* Resultados */}
+      <section id="resultados" className="mb-12">
+        <h2 className="text-2xl font-semibold text-indigo-700 mb-4">4. Resultados</h2>
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Tras pulsar "Calcular", RadioLinkCalc genera métricas clave para evaluar la viabilidad del enlace. A continuación, se presentan los resultados obtenidos con los parámetros ingresados:
           </p>
-
-          {/* Mapa */}
-          <div className="rounded-lg overflow-hidden shadow-lg">
-            <iframe
-              className="w-full h-96"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.418664057866!2d-122.08424968468115!3d37.42199997982647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5ae6b6326e1%3A0x213e4ce3d9a6b6f9!2sGoogleplex!5e0!3m2!1sen!2sus!4v1683248731234!5m2!1sen!2sus"
-              title="Nuestra ubicación"
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <ul className="list-disc pl-5 text-gray-700">
+              <li><strong>Frecuencia Promedio:</strong> 5.710 GHz</li>
+              <li><strong>Distancia Total:</strong> 2.75 km</li>
+              <li><strong>Azimut:</strong> 16.44°</li>
+              <li><strong>Espacio Libre:</strong> 116.36 dB</li>
+              <li><strong>Pérdidas Totales:</strong> 123.05 dB</li>
+            </ul>
+            <ul className="list-disc pl-5 text-gray-700">
+              <li><strong>Index Peor Fresnel:</strong> 73</li>
+              <li><strong>Radio de Fresnel:</strong> 5.29 m</li>
+              <li><strong>Espacio Libre Fresnel:</strong> 4.62 m</li>
+              <li><strong>Peor Fresnel:</strong> 0.87F1</li>
+              <li><strong>Distancia Tx-Obstáculo:</strong> 2026.95 m</li>
+              <li><strong>Distancia Rx-Obstáculo:</strong> 721.93 m</li>
+            </ul>
           </div>
-        </div>
-      </section>
-
-      <section id="featured-video" className="py-12 bg-gray-100 h-[40em] ">
-        <div className="container mx-auto px-6 text-center h-full">
-          {/* Título */}
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">Video Destacado</h2>
-          <p className="text-gray-600 mb-8">
-            Descubre más sobre este tema con nuestro video destacado.
-          </p>
-
-          {/* Video */}
-          <div className="aspect-w-16 h-[35em] rounded-lg overflow-hidden shadow-lg">
-            <iframe
-              className="w-full h-full"
-              src="https://www.youtube.com/embed/YfzRauVRMHA"
-              title="Video destacado"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-      </section>
-
-
-
-
-
-      {/* Por qué elegirnos */}
-      <section className="py-20 mt-5">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            ¿Por qué elegir Digital Boost?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <Search className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Estrategia Personalizada</h3>
-              <p className="text-gray-600">Soluciones adaptadas a tus objetivos específicos</p>
-            </div>
-            <div className="text-center">
-              <Star className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Resultados Medibles</h3>
-              <p className="text-gray-600">Reportes detallados y KPIs transparentes</p>
-            </div>
-            <div className="text-center">
-              <MessageSquare className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Soporte Continuo</h3>
-              <p className="text-gray-600">Acompañamiento en cada paso del proceso</p>
-            </div>
-            <div className="text-center">
-              <Monitor className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Tecnología Moderna</h3>
-              <p className="text-gray-600">Utilizamos las últimas herramientas digitales</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* Testimonios */}
-
-
-      {/* CTA Section */}
-      <section className="py-20 bg-blue-600 text-white">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-8">
-            ¿Listo para impulsar tu presencia digital?
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Agenda una consulta gratuita y descubre cómo podemos ayudarte a alcanzar tus objetivos de negocio.
-          </p>
-          <Button className="bg-white text-blue-600 hover:bg-gray-100" onClick={openModal}
-          >
-
-
-            Contactar Ahora
-          </Button>
-        </div>
-      </section>
-
-
-
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4">Digital Boost</h3>
-              <p className="text-gray-400">
-                Tu socio en marketing digital para el crecimiento de tu negocio.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Contacto</h4>
-              <div className="flex items-center mb-2">
-                <Mail className="h-5 w-5 mr-2" />
-                <span>info@digitalboost.com</span>
-              </div>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Servicios</h4>
-              <ul className="space-y-2">
-                <li>Diseño Web</li>
-                <li>Marketing en Redes Sociales</li>
-                <li>Publicidad Digital</li>
-                <li>SEO</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Síguenos</h4>
-              <div className="flex space-x-4">
-                <Facebook className="h-6 w-6 cursor-pointer hover:text-blue-400" />
-                <Instagram className="h-6 w-6 cursor-pointer hover:text-pink-400" />
-                <Linkedin className="h-6 w-6 cursor-pointer hover:text-blue-400" />
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-            <p className="text-gray-400">
-              © {new Date().getFullYear()} Digital Boost. Todos los derechos reservados.
+          <div className="mb-4">
+            <h3 className="text-lg font-medium text-gray-800 mb-2">Interpretación:</h3>
+            <p className="text-gray-700">
+              - El enlace tiene una distancia de <strong>2.75 km</strong> y opera a <strong>5.710 GHz</strong>.<br />
+              - La zona de Fresnel en el punto más crítico (índice 73) tiene un radio de <strong>5.29 m</strong>, pero solo hay <strong>4.62 m</strong> de espacio libre, lo que resulta en un <strong>Peor Fresnel de 0.87F1</strong>. Esto está dentro del rango aceptable (mínimo 0.6F1), pero podría haber interferencias en condiciones adversas.<br />
+              - Las pérdidas totales son de <strong>123.05 dB</strong>, lo que genera un margen de enlace negativo (-85.05 dB), indicando que el enlace <strong>no es viable</strong> con los parámetros actuales.
             </p>
           </div>
+          <div className="mt-4">
+            <h3 className="text-lg font-medium text-gray-800 mb-2">Recomendaciones:</h3>
+            <ul className="list-disc pl-5 text-gray-700">
+              <li>Aumentar la potencia del transmisor o usar antenas con mayor ganancia.</li>
+              <li>Elevar las alturas de las antenas para mejorar el espacio libre Fresnel.</li>
+              <li>Reducir obstrucciones en el punto crítico (a 2026.95 m del transmisor).</li>
+            </ul>
+          </div>
         </div>
+      </section>
+
+      {/* Perfil de Elevación */}
+      <section id="perfil-elevacion" className="mb-12">
+        <h2 className="text-2xl font-semibold text-indigo-700 mb-4">5. Perfil de Elevación</h2>
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <p className="text-gray-700 leading-relaxed mb-4">
+            El gráfico muestra el perfil topográfico entre el transmisor y el receptor, incluyendo alturas y obstáculos.
+          </p>
+          <img
+            src="/images/perfil-elevacion.png" // Usa un gráfico de ejemplo de perfil de elevación
+            alt="Perfil de Elevación"
+            className="w-full max-w-lg mx-auto"
+          />
+        </div>
+      </section>
+
+      {/* Errores Comunes */}
+      <section id="errores" className="mb-12">
+        <h2 className="text-2xl font-semibold text-indigo-700 mb-4">6. Errores Comunes y Soluciones</h2>
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <ul className="space-y-4">
+            <li className="flex items-start">
+              <span className="text-red-600 mr-2">⚠️</span>
+              <div>
+                <strong>Error en coordenadas:</strong> Asegúrate de que sean valores decimales válidos y dentro del rango permitido.
+              </div>
+            </li>
+            <li className="flex items-start">
+              <span className="text-red-600 mr-2">⚠️</span>
+              <div>
+                <strong>No hay línea de visión:</strong> Verifica si hay obstáculos en el perfil de elevación e intenta ajustar las alturas de las antenas.
+              </div>
+            </li>
+            <li className="flex items-start">
+              <span className="text-red-600 mr-2">⚠️</span>
+              <div>
+                <strong>Datos incompletos:</strong> Todos los campos son obligatorios antes de realizar un cálculo.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Soporte Técnico */}
+      <section id="soporte" className="mb-12">
+        <h2 className="text-2xl font-semibold text-indigo-700 mb-4">7. Soporte Técnico</h2>
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <p className="text-gray-700 leading-relaxed mb-2">
+            Si necesitas ayuda adicional, contáctanos:
+          </p>
+          <ul className="list-disc pl-5 text-gray-700">
+            <li>Email: <a href="mailto:support@radiolinkcalc.com" className="text-blue-600 hover:underline">support@radiolinkcalc.com</a></li>
+            <li>Teléfono: +1 (123) 456-7890</li>
+            <li>Horario de Atención: Lunes a Viernes, 9:00 AM - 5:00 PM (EST)</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Footer con Botón Volver */}
+      <footer className="flex justify-center mt-12">
+
       </footer>
     </div>
   );
 };
 
-export default LandingPage;
+export default RadioLinkCalcManual;
