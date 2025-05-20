@@ -189,11 +189,7 @@ const RadioLinkCalcManual = () => {
           <p className="text-gray-700 leading-relaxed mb-4">
             El gráfico muestra el perfil topográfico entre el transmisor y el receptor, incluyendo alturas y obstáculos.
           </p>
-          <img
-            src="/images/perfil-elevacion.png"
-            alt="Perfil de Elevación"
-            className="w-full max-w-lg mx-auto"
-          />
+         
         </div>
       </section>
 
