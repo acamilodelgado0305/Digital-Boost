@@ -81,7 +81,7 @@ const RadioLinkCalcManual = () => {
               <li>Longitud Receptor: Ejemplo <code className="bg-gray-200 px-1 rounded">-72.65215833</code></li>
             </ul>
             <div className="mt-4">
-             
+              
             </div>
           </div>
 
@@ -113,7 +113,7 @@ const RadioLinkCalcManual = () => {
               <li>Sensibilidad del Receptor: Ejemplo <code className="bg-gray-200 px-1 rounded">-107 dBm</code></li>
             </ul>
             <div className="mt-4">
-             
+              
             </div>
           </div>
 
@@ -136,7 +136,7 @@ const RadioLinkCalcManual = () => {
               Una vez ingresados todos los datos, haz clic en el botón <strong className="text-indigo-600">"Calcular"</strong> para obtener los resultados.
             </p>
             <div className="mt-4">
-              
+             
             </div>
           </div>
         </div>
@@ -183,6 +183,12 @@ const RadioLinkCalcManual = () => {
             </ul>
           </div>
         </div>
+
+        <img
+            src={resultados} // Usa una captura de ejemplo de resultados
+            alt="Ejemplo de Resultados"
+            className="w-full max-w-lg mx-auto"
+          />
       </section>
 
       {/* Perfil de Elevación */}
