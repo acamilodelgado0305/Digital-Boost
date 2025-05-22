@@ -1,6 +1,7 @@
 import React from 'react';
 import inicio from './images/inicio.jpg';
 import resultados from './images/resultados.jpg';
+import datasetsTable from './images/datasetsTable.jpg'; // Add the image import for the dataset table
 
 const RadioLinkCalcManual = () => {
   return (
@@ -24,8 +25,9 @@ const RadioLinkCalcManual = () => {
           <li><a href="#como-usar" className="text-blue-600 hover:underline">3. Cómo Usar la Calculadora</a></li>
           <li><a href="#resultados" className="text-blue-600 hover:underline">4. Resultados</a></li>
           <li><a href="#perfil-elevacion" className="text-blue-600 hover:underline">5. Perfil de Elevación</a></li>
-          <li><a href="#errores" className="text-blue-600 hover:underline">6. Errores Comunes y Soluciones</a></li>
-          <li><a href="#soporte" className="text-blue-600 hover:underline">7. Soporte Técnico</a></li>
+          <li><a href="#fuente-datos" className="text-blue-600 hover:underline">6. Fuente de Datos Topográficos</a></li>
+          <li><a href="#errores" className="text-blue-600 hover:underline">7. Errores Comunes y Soluciones</a></li>
+          <li><a href="#soporte" className="text-blue-600 hover:underline">8. Soporte Técnico</a></li>
         </ul>
       </section>
 
@@ -118,7 +120,7 @@ const RadioLinkCalcManual = () => {
             </p>
             <ul className="list-disc pl-5 text-gray-700">
               <li>Número de Puntos/Muestras: Ejemplo <code className="bg-gray-200 px-1 rounded">100</code>. Máximo permitido: <code className="bg-gray-200 px-1 rounded">1000</code> para garantizar precisión sin sobrecargar el sistema.</li>
-              <li>Dataset Perfil: Ejemplo <code className="bg-gray-200 px-1 rounded">mapzen</code>. Mapzen se utiliza debido a su alta resolución global, datos abiertos y actualizaciones frecuentes, lo que lo hace más confiable que otros conjuntos como SRTM, que pueden tener menor precisión en áreas específicas.</li>
+              <li>Dataset Perfil: Ejemplo <code className="bg-gray-200 px-1 rounded">mapzen</code>. Mapzen se utiliza debido a su alta resolución global, datos abiertos y actualizaciones frecuentes, lo que lo hace más confiable que otros conjuntos como SRTM, que pueden have menor precisión en áreas específicas.</li>
             </ul>
           </div>
 
@@ -189,13 +191,36 @@ const RadioLinkCalcManual = () => {
           <p className="text-gray-700 leading-relaxed mb-4">
             El gráfico muestra el perfil topográfico entre el transmisor y el receptor, incluyendo alturas y obstáculos.
           </p>
-         
+        </div>
+      </section>
+
+      {/* Fuente de Datos Topográficos */}
+      <section id="fuente-datos" className="mb-12">
+        <h2 className="text-2xl font-semibold text-indigo-700 mb-4">6. Fuente de Datos Topográficos</h2>
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <p className="text-gray-700 leading-relaxed mb-4">
+            RadioLinkCalc utiliza datos topográficos de la API de <a href="https://www.opentopodata.org" className="text-blue-600 hover:underline">OpenTopoData</a>, una herramienta de código abierto que proporciona acceso a múltiples conjuntos de datos de elevación globales y regionales. Esta API permite obtener altitudes precisas para generar perfiles de elevación entre dos puntos geográficos, lo que es esencial para analizar la viabilidad de un enlace de radio.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            OpenTopoData ofrece varios conjuntos de datos con diferentes resoluciones y coberturas geográficas. A continuación, se presenta una tabla con los datasets disponibles, su resolución, extensión geográfica, fuente y la elevación en Denver, CO (como referencia):
+          </p>
+          <img
+            src={datasetsTable}
+            alt="Tabla de conjuntos de datos de OpenTopoData"
+            className="w-full max-w-2xl mx-auto border border-gray-300 rounded-lg mb-4"
+          />
+          <p className="text-gray-700 leading-relaxed italic text-sm mb-4">
+            La tabla muestra los conjuntos de datos disponibles en OpenTopoData, incluyendo su resolución (en metros o kilómetros), la extensión geográfica que cubren (como global, Europa, o áreas específicas como Nueva Zelanda), la fuente de los datos (por ejemplo, USGS, NASA, NOAA), y la elevación registrada en Denver, CO, para aquellos datasets que cubren esa área.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Para RadioLinkCalc, se recomienda usar datasets como <code className="bg-gray-200 px-1 rounded">mapzen</code> debido a su alta resolución global (~30 m) y actualizaciones frecuentes, lo que asegura una mayor precisión en el cálculo del perfil de elevación. Sin embargo, para áreas específicas como Europa, <code className="bg-gray-200 px-1 rounded">eudem25m</code> puede ser más adecuado gracias a su resolución de 25 m.
+          </p>
         </div>
       </section>
 
       {/* Errores Comunes */}
       <section id="errores" className="mb-12">
-        <h2 className="text-2xl font-semibold text-indigo-700 mb-4">6. Errores Comunes y Soluciones</h2>
+        <h2 className="text-2xl font-semibold text-indigo-700 mb-4">7. Errores Comunes y Soluciones</h2>
         <div className="bg-white p-6 rounded-lg shadow-md">
           <ul className="space-y-4">
             <li className="flex items-start">
@@ -222,7 +247,7 @@ const RadioLinkCalcManual = () => {
 
       {/* Soporte Técnico */}
       <section id="soporte" className="mb-12">
-        <h2 className="text-2xl font-semibold text-indigo-700 mb-4">7. Soporte Técnico</h2>
+        <h2 className="text-2xl font-semibold text-indigo-700 mb-4">8. Soporte Técnico</h2>
         <div className="bg-white p-6 rounded-lg shadow-md">
           <p className="text-gray-700 leading-relaxed mb-2">
             Si necesitas ayuda adicional, contáctanos:
@@ -238,7 +263,7 @@ const RadioLinkCalcManual = () => {
       {/* Footer con Información de Creadores y Repositorio */}
       <footer className="mt-12 text-center text-gray-600 text-sm">
         <p>
-          Desarrollado por Andrés Camilo Delgado y Cristian Castro Ríos, estudiantes de Ingeniería de Telecomunicaciones, Universidad de Pamplona, bajo la dirección del docente José del Carmen Peña, como parte del curso de Radiocomunicaciones.
+          Desarrollado por Cristian Castro Ríos y Andrés Camilo Delgado  , estudiantes de Ingeniería de Telecomunicaciones, Universidad de Pamplona, bajo la dirección del docente José del Carmen Peña, como parte del curso de Radiocomunicaciones.
         </p>
         <p className="mt-2">
           Código fuente disponible en: <a href="https://github.com/Criscas05/RadioLinkCalc.git" className="text-blue-600 hover:underline">https://github.com/Criscas05/RadioLinkCalc.git</a>
